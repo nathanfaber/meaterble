@@ -9,7 +9,7 @@ There are 8 bytes available for read on the probe at service 2 characteristics 1
 
 | Byte 1  | Byte 2 | Byte 3  | Byte 4 | Byte 5  | Byte 6 | Byte 7 | Byte 8 |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Tip accum  | Tip count  | Ambient accum  | Ambient count  | Unknown | Unknown | Unkown | Uknown |
+| Tip accum  | Tip count  | Ambient accum  | Ambient count  | Unknown | Unknown | Unknown | Unknown |
 
 One of the unknown values may be battery level but this is not confirmed.
 
