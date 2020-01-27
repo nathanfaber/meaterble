@@ -9,7 +9,12 @@ The goal of this project is to reverse engineer the communicaton with Meater Blu
 The addr for both readMeater.py and gattool can be found using hcitool lescan (look for MEATER).
 
 Your app, block, or meater+ must be off for the probe to be seen. Each probe only allows a single low energy connection.
-  
+
+# BLE handles of interest (gattool handles)
+1. 31 contains the 8 bytes documented below.
+2. 43 contains a pretty large blob (512 bytes) that needs to be investigated. The key to the ambient is likely contained in here.
+
+
 # Fitting
 ![Fitting](https://github.com/nathanfaber/meaterble/blob/master/initialFit.png?raw=true)
 
