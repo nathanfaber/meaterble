@@ -54,11 +54,12 @@ Your app, block, or meater+ must be off for the probe to be seen. Each probe onl
 
 # Data format (handle 43)
 It looks like all of the data is formatted as account/count pairs. The 512 bytes here are 256 unique values.
-Value index 1 (bytes 1 & 2) appear to be the uptime for the probe in seconds.
-Value index 2 unknown
-Value index 3 unknown
-Value index 4 seems like a counter telling us how many values are populated in the index 7..256 buffer (below).
-Value index 7 is the start of what appears to be a history buffer of handle 31 data formats (tip, ambient) repeated to the end. It has a diagonal population pattern. It feels as if a BLE read populates them but this needs to be confirmed.
+
+* Value index 1 (bytes 1 & 2) appear to be the uptime for the probe in seconds.
+* Value index 2 unknown
+* Value index 3 unknown
+* Value index 4 seems like a counter telling us how many values are populated in the index 7..256 buffer (below).
+* Value index 7..256 is the start of what appears to be a history buffer of handle 31 data formats (tip, ambient) repeated to the end. It has a diagonal population pattern. It feels as if a BLE read populates them but this needs to be confirmed.
 
 
 # Data format (handle 31)
