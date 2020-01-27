@@ -21,7 +21,7 @@ The tip fahrenheit temperature can be derived from the following:
 
 This was calculated with 50 samples and has an R2 of 1.0. It seems to be pretty accurate.
 
-# Ambient calculation
+# Ambient calculation (Not reliable - needs work)
 The ambient seems to be a bit more fussy, a rough calculation can be derived from:
 > F = 1.04*(AmbientAccum+AmbientCount*255)+139.
 
