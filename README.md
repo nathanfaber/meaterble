@@ -52,6 +52,15 @@ Your app, block, or meater+ must be off for the probe to be seen. Each probe onl
 * 42: : 02 2b 00 d4 f0 aa 88 cd 30 a8 8d 1e 4d be 85 20 2c e0 b3
 * 43: : a0 32 00 00 a0 00 51 00 13 00 09 00 3c 01 12 00 8c 02 64 00 cf 02 7a 00 fb 02 80 00 27 03 7f 00 55 03 86 00 89 03 97 00 c0 03 94 00 04 04 ae 00 56 04 c6 00 b6 04 cc 00 16 05 d5 00 6d 05 d0 00 ba 05 d7 00 fb 05 e4 00 37 06 e5 00 19 06 bd 00 27 06 da 00 2e 06 dc 00 2b 06 d4 00 27 06 b7 00 15 06 ad 00 08 06 a8 00 fd 05 aa 00 f1 05 a6 00 e3 05 a2 00 d3 05 9e 00 c2 05 97 00 b2 05 90 00 a2 05 8a 00 89 05 82 00 4f 05 6b 00 14 05 59 00 e1 04 4b 00 b1 04 3f 00 85 04 34 00 5d 04 2c 00 38 04 25 00 14 04 1e 00 f5 03 17 00 d5 03 0d 00 b8 03 0b 00 9b 03 0b 00 82 03 0b 00 69 03 0b 00 51 03 0b 00 3b 03 0b 00 24 03 0b 00 10 03 0b 00 fd 02 0b 00 eb 02 0b 00 d9 02 0b 00 c9 02 0b 00 b8 02 0b 00 a8 02 0b 00 9d 02 0b 00 92 02 0b 00 89 02 0a 00 81 02 0a 00 78 02 0b 00 6e 02 0a 00 67 02 0a 00 60 02 0a 00 5a 02 0a 00 53 02 0a 00 4d 02 0a 00 48 02 0a 00 42 02 0a 00 3d 02 0a 00 37 02 0a 00 33 02 0a 00 35 02 28 00 59 02 59 00 7a 02 6c 00 9a 02 72 00 bd 02 72 00 de 02 70 00 fc 02 6e 00 2a 03 8a 00 70 03 b0 00 c1 03 c9 00 c7 03 0b 00 b8 03 0b 00 a9 03 0b 00 9b 03 0b 00 8f 03 0b 00 82 03 0b 00 75 03 0b 00 69 03 0b 00 5d 03 0b 00 51 03 0b 00 46 03 0b 00 3b 03 0b 00 2f 03 0b 00 24 03 0b 00 1b 03 0b 00 10 03 0b 00 07 03 0b 00 fd 02 0b 00 f3 02 0b 00 eb 02 0b 00 e1 02 0b 00 d9 02 0b 00 d0 02 0b 00 c9 02 0b 00 c1 02 0b 00 b8 02 0b 00 b0 02 0b 00 a8 02 0b 00 a1 02 0b 00 9d 02 0b 00 98 02 0a 00 92 02 0b 00 8d 02 0a 00 89 02 0a 00 85 02 0b 00 81 02 0a 00 7c 02 0a 00 78 02 0b 00 75 02 0a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 **(Likely contains the bits needed for the ambient corrections)**
 
+# Data format (handle 43)
+It looks like all of the data is formatted as account/count pairs. The 512 bytes here are 256 unique values.
+Value index 1 (bytes 1 & 2) appear to be the uptime for the probe in seconds.
+Value index 2 unknown
+Value index 3 unknown
+Value index 4 seems like a counter telling us how many values are populated in the index 7..256 buffer (below).
+Value index 7 is the start of what appears to be a history buffer of handle 31 data formats (tip, ambient) repeated to the end. It has a diagonal population pattern. It feels as if a BLE read populates them but this needs to be confirmed.
+
+
 # Data format (handle 31)
 There are 8 bytes available for read on the probe at service 2 characteristics 1.
 
