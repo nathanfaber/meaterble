@@ -21,4 +21,4 @@ This was calculated with 50 samples and has an R2 of 1.0. It seems to be pretty 
 The ambient seems to be a bit more fussy, a rough calculation can be derived from:
 > F = 1.04*(AmbientAccum+AmbientCount*255)+139.
 
-This was calculated with 50 samples and has an R2 of 0.996. It does not seem to be well behaved in random testing. I'm not sure if there is some internal compensation that needs to be accounted for from another value.
+This was calculated with 50 samples and has an R2 of 0.996. It does not seem to be well behaved in random testing. I'm not sure if there is some internal compensation that needs to be accounted for from another value. The ambient does not seem to be accurate for raw values ~26 (~161F).
