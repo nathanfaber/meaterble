@@ -1,6 +1,8 @@
 # Meater BLE - Reverse Engineering
 The goal of this project is to reverse engineer the communicaton with Meater Bluetooth Low Energy probes. Once the format is known, we will be able to implement an alternative receiver to the Block, Meater+ and the IOS/Android software.
 
+# Fitting
+![Fitting](https://github.com/nathanfaber/meaterble/blob/master/initialFit.png?raw=true)
 
 # Data format
 There are 8 bytes available for read on the probe at service 2 characteristics 1.
