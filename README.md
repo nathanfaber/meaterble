@@ -58,8 +58,9 @@ It looks like all of the data is formatted as account/count pairs. The 512 bytes
 * Value index 1 (bytes 1 & 2) appear to be the uptime for the probe in seconds.
 * Value index 2 unknown
 * Value index 3 unknown
-* Value index 4 seems like a counter telling us how many values are populated in the index 7..256 buffer (below).
-* Value index 7..256 is the start of what appears to be a history buffer of handle 31 data formats (tip, ambient) repeated to the end. It has a diagonal population pattern. It feels as if a BLE read populates them but this needs to be confirmed.
+* Value index 4 seems like the current pointer into the value 7..246 ring buffer below.
+* Value index 7..246 is the start of what appears to be a history ring buffer (120 pairs) of handle 31 data formats (tip, ambient) repeated to the end. They appear to be populated each time a read is requested, so the frequency between measures is determined by the client.
+* Value index 247..256 unkown
 
 
 # Data format (handle 31)
