@@ -77,5 +77,12 @@ The raw value can be calculated as accum+count*256. The accumulator will reach 2
 # Probe calculation/Ambient calculation
 User [Eric Thomas]( https://github.com/b0naf1de/ ) gave us an awesome push with the calculations and code for ambient and tip.  See [PR #1]( https://github.com/nathanfaber/meaterble/pull/1 ).
 
+# Identifying probes - block/single (handle 22 and 24)
+The suffix after _ identifies the probe number, corresponding to the etch number on the block probes and 0 for singletons.
 
+A singleton probe has the value `v1.0.4_0` and `1.0.4_0`
+
+A block probe has the values `v1.0.5_1` to `v1.0.5_4` corresponding to the etching.
+
+The version will assumingly change depending on the firmware on the probes, these correspond to a Meater+ probe block.
 
