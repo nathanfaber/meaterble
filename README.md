@@ -75,4 +75,7 @@ One of the unknown values may be battery level but this is not confirmed.
 The raw value can be calculated as accum+count*256. The accumulator will reach 255 and then roll over to the count.
 
 # Probe calculation/Ambient calculation
-User @b0naf1de gave us an awesome push with the calculations and code for ambient and tip. Please see #1
+User [Eric Thomas]( https://github.com/b0naf1de/ ) gave us an awesome push with the calculations and code for ambient and tip.  See [PR #1]( https://github.com/nathanfaber/meaterble/pull/1 ).
+
+
+
