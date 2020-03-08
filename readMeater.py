@@ -22,6 +22,8 @@ import sys
 import time
 import pickle
 import binascii
+
+from meaterTemperature import Temperature
  
 print "Connecting..."
 addr = sys.argv[1]
@@ -40,18 +42,18 @@ def enumerateDev(dev):
             print
 
 
-calcF = lambda Accum, Count, Slope, Intercept: (Accum+Count*255)*Slope + Intercept
-
 service=dev.services[2]
 char=service.getCharacteristics()[1]
 fp=open(addr + ".pickle", "ab")
 while True:
     r1 = bytearray(char.read())
-    tipF = calcF(r1[0], r1[1], 0.113, 31.7)
-    ambF = calcF(r1[2], r1[3], 1.04, 139)
-    print "%d,%d,%d,%d,%d,%d,%d,%d" % (r1[0], r1[1], r1[2], r1[3], r1[4], r1[5], r1[6], r1[7])
-    print "tip: %d %d (%fF) tail: %d %d (%fF)" % (r1[0], r1[1], tipF, r1[2], r1[3], ambF )
+    print ("".join("0x%02x, " % i for i in r1))
+
+    temp = Temperature(r1)
+    print "    tip: %s %d %fF (%fC)" % (hex(temp.getTip()), temp.getTip(), temp.getTipF(), temp.getTipC())
+    print "ambient: %s %d %fF (%fC)" % (hex(temp.getAmbient()), temp.getAmbient(), temp.getAmbientF(), temp.getAmbientC())
+    print ""
+
     pickle.dump((time.time(), r1), fp)
     fp.flush()
     time.sleep(1)
-
