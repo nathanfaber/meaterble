@@ -28,10 +28,6 @@ D0:D9:4F:86:52:CE v1.0.4 probe: 0 tip: 63.837500F/17.687500C ambient: 63.837500F
 D0:D9:4F:8B:57:25 v1.0.5 probe: 4 tip: 63.387500F/17.437500C ambient: 63.387500F/17.437500C battery: 80% age: 0s
 ```
 
-
-# Fitting
-![Fitting](https://github.com/nathanfaber/meaterble/blob/master/initialFit.png?raw=true)
-
 # BLE handles of interest (gattool handles)
 * 1: : 00 18
 * 2: : 02 03 00 00 2a
