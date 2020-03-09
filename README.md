@@ -44,7 +44,7 @@ Your app, block, or meater+ must be off for the probe to be seen. Each probe onl
 * 32: : 01 00
 * 33: : 42
 * 34: : 12 23 00 b8 27 bf 53 38 d8 3c bd 84 48 d8 68 77 48 db 2a
-* 35: : 05 00 **(Changes have been observed here 04 -> 05)**
+* 35: : 05 00 **(Battery level)**
 * 36: : 01 00
 * 37: : 43
 * 38: : 0a 27 00 f7 7a c4 33 aa 2e 0a bb b4 4c 17 3b 64 8e f2 ca
