@@ -2,13 +2,32 @@
 The goal of this project is to reverse engineer the communicaton with Meater Bluetooth Low Energy probes. Once the format is known, we will be able to implement an alternative receiver to the Block, Meater+ and the IOS/Android software.
 
 # Running
-`readMeater.py` can be used or gattool can read the handle we are probing:
-
-`gatttool --device=<addr> --char-read --handle=31`
-
-The addr for both readMeater.py and gattool can be found using hcitool lescan (look for MEATER).
-
 Your app, block, or meater+ must be off for the probe to be seen. Each probe only allows a single low energy connection.
+
+`run.sh` can be used to scan for all local probes and then it will run readMeater.py on each:
+
+```
+# ./run.sh 
+D0:D9:4F:86:52:CE MEATER
+D0:D9:4F:8B:57:25 MEATER
+Connecting...
+Connecting...
+Connected
+Connected
+D0:D9:4F:86:52:CE v1.0.4 probe: 0 tip: 63.837500F/17.687500C ambient: 63.837500F/17.687500C battery: 90% age: 0s
+D0:D9:4F:8B:57:25 v1.0.5 probe: 4 tip: 63.387500F/17.437500C ambient: 63.387500F/17.437500C battery: 80% age: 0s
+D0:D9:4F:86:52:CE v1.0.4 probe: 0 tip: 63.837500F/17.687500C ambient: 63.837500F/17.687500C battery: 90% age: 0s
+D0:D9:4F:8B:57:25 v1.0.5 probe: 4 tip: 63.387500F/17.437500C ambient: 63.387500F/17.437500C battery: 80% age: 0s
+D0:D9:4F:86:52:CE v1.0.4 probe: 0 tip: 63.837500F/17.687500C ambient: 63.837500F/17.687500C battery: 90% age: 0s
+D0:D9:4F:8B:57:25 v1.0.5 probe: 4 tip: 63.387500F/17.437500C ambient: 63.387500F/17.437500C battery: 80% age: 0s
+D0:D9:4F:86:52:CE v1.0.4 probe: 0 tip: 63.837500F/17.687500C ambient: 63.837500F/17.687500C battery: 90% age: 0s
+D0:D9:4F:8B:57:25 v1.0.5 probe: 4 tip: 63.387500F/17.437500C ambient: 63.387500F/17.437500C battery: 80% age: 0s
+D0:D9:4F:86:52:CE v1.0.4 probe: 0 tip: 63.837500F/17.687500C ambient: 63.837500F/17.687500C battery: 90% age: 0s
+D0:D9:4F:8B:57:25 v1.0.5 probe: 4 tip: 63.387500F/17.437500C ambient: 63.387500F/17.437500C battery: 80% age: 0s
+D0:D9:4F:86:52:CE v1.0.4 probe: 0 tip: 63.837500F/17.687500C ambient: 63.837500F/17.687500C battery: 90% age: 0s
+D0:D9:4F:8B:57:25 v1.0.5 probe: 4 tip: 63.387500F/17.437500C ambient: 63.387500F/17.437500C battery: 80% age: 0s
+```
+
 
 # Fitting
 ![Fitting](https://github.com/nathanfaber/meaterble/blob/master/initialFit.png?raw=true)
